@@ -8,8 +8,6 @@ pub fn annotate(minefield: &[&str]) -> Vec<String> {
     let max_x: usize = minefield[0].len();
     let max_y: usize = minefield.len();
 
-    // ...existing code...
-
     for y in 0..minefield.len() {
         for x in 0..minefield[0].len() {
             let current_tile: char = minefield[y].as_bytes()[x] as char;
