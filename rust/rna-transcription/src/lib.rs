@@ -38,14 +38,12 @@ impl Dna {
             transcription.push(nucleotide);
         }
 
-        Ok(Dna {
-            transcription: transcription,
-        })
+        Ok(Dna { transcription })
     }
 
     pub fn into_rna(self) -> Rna {
         Rna {
-            transcription: self.transcription.iter().map(|n| complement(n)).collect(),
+            transcription: self.transcription.iter().map(complement).collect(),
         }
     }
 }
@@ -64,9 +62,7 @@ impl Rna {
             transcription.push(nucleotide);
         }
 
-        Ok(Rna {
-            transcription: transcription,
-        })
+        Ok(Rna { transcription })
     }
 }
 
