@@ -42,12 +42,11 @@ pub fn decode(source: &str) -> String {
         if char.is_numeric() {
             quantity.push(char);
         } else {
-            let amount: u16;
-            if !quantity.is_empty() {
-                amount = quantity.parse().unwrap();
+            let amount: u16 = if !quantity.is_empty() {
+                quantity.parse().unwrap()
             } else {
-                amount = 1;
-            }
+                1
+            };
 
             for _ in 0..amount {
                 decoded_string.push(char);
